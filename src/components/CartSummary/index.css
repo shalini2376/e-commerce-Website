@@ -1,0 +1,13 @@
+.checkout-btn {
+  border: none;
+  outline: none;
+  background-color: #0b69ff;
+  color: #ffffff;
+  font-size: 15px;
+  padding: 9px 12px;
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -21,7 +21,7 @@
     "react-router-dom": "5.2.0"
   },
 
-  "homepage": "https://shalini2376.github.io/e-commerce-Website",
+  "homepage": ".",
 
   "devDependencies": {
     "eslint-config-airbnb": "18.2.1",

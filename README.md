@@ -102,6 +102,11 @@ All cart operations handled using global state:
 
 ---
 
+## 🔗 Live Demo
+Netlify: https://nxt-trendz-shopping-app.netlify.app
+
+---
+
 ## 🧰 Tech Stack
 
 - **React**

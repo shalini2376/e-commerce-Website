@@ -1,183 +1,208 @@
-In this project, let's build a **Nxt Trendz - Cart Features** by applying the concepts we have learned till now.
+# 🛍️ Nxt Trendz – Complete E-Commerce Web Application
 
-### Refer to the video below:
+A fully functional **e-commerce shopping experience** built using **React**, with features like product listing, filtering, sorting, search, product details, protected routes, and complete cart functionality.
 
-<br/>
-<div style="text-align: center;">
-  <video style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12);outline:none;" loop="true" autoplay="autoplay" controls="controls" muted>
-    <source src="https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-output.mp4" type="video/mp4">
-  </video>
-</div>
-<br/>
+This project simulates a real online shopping workflow with authentication, Prime badges, exclusive deals, and a detailed cart management experience.
 
-### Design Files
+---
 
-<details>
-<summary>Click to view</summary>
+## ✨ Features
 
-- [Extra Small (Size < 576px) and Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-sm-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-lg-output.png)
+### 🔐 **Authentication**
+- Hard-coded login credentials (provided by mentor)
+- Prime & Non-Prime users
+- Protected routes → unauthenticated users are redirected to **Login Page**
 
-</details>
+---
 
-### Set Up Instructions
+## 🏠 **Core Pages**
+- **Login Page**
+- **Home Page**
+- **Products Listing Page**
+- **Product Details Page**
+- **Cart Page**
+- **Not Found Page**
 
-<details>
-<summary>Click to view</summary>
+---
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
+## 🛒 **E-Commerce Features**
 
-### Completion Instructions
+### 🛍️ Products Page
+- Fetches product data from given APIs (provided in assignment)
+- Displays all products with images, title, brand, rating, and price
+- **Search** by title
+- **Category filter**
+- **Rating filter**
+- **Sorting** (Price: Low → High, High → Low)
+- Responsive UI
 
-<details>
-<summary>Functionality to be added</summary>
-<br/>
+### ⭐ Prime Features
+- Prime users see **Prime Badges**
+- Access to certain Prime-exclusive deals
+- Special highlights on products eligible for Prime delivery
 
-The app must have the following functionalities
+### 📄 Product Details Page
+- Detailed view of the selected product
+- Displays:
+  - Image
+  - Title, brand, rating
+  - Price
+  - Description
+  - Availability
+  - Prime badge (if applicable)
+- “Add to Cart” button available directly on this page
 
-- When an unauthenticated user tries to access the **Cart** Route, then the page should be navigated to **Login** Route
+---
 
-- Following are the features to be implemented
+## 🛒 **Cart Features (Implemented by Me)**
 
-  - Feature 1
+This is the section I developed completely from scratch:
 
-    - When an authenticated user tries to add the same product multiple times
-      - The quantity of the product should be updated accordingly, and the count of the cart items in the header should be remained same
+### 🔐 Protected Cart Route
+- Only logged-in users can access the cart  
+- Otherwise redirected to login
 
-  - Feature 2
+### ➕ Add to Cart
+- Adding the same product twice **updates its quantity**  
+- No duplicate items appear in the cart list
 
-    - The total amount and number of items in the cart should be displayed in the **Cart** Route
+### 🔢 Update Quantity
+- **Increment (+)** increases quantity by 1  
+- **Decrement (−)** decreases quantity  
+- If quantity becomes 0 → **item is removed**
 
-  - Feature 3
+### ❌ Remove Operations
+- Remove individual item  
+- Remove all items at once  
+- Shows **Empty Cart View** when no items left
 
-    - In each cart item in the cart
-      - When the plus icon is clicked, then the quantity of the product should be incremented by one
-      - When the minus icon is clicked, then the quantity of the product should be decremented by one
-      - When the quantity of the product is one and the minus icon is clicked, then the respective product should be removed from the cart
-      - Based on the quantity of the product, the product price and the Cart Summary, i.e the total cost should be updated accordingly
+### 🧠 Context API Based Cart Management
+All cart operations handled using global state:
+- `cartList`
+- `addCartItem`
+- `removeCartItem`
+- `incrementCartItemQuantity`
+- `decrementCartItemQuantity`
+- `removeAllCartItems`
 
-  - Feature 4
+### 💰 Cart Summary
+- Total items  
+- Total price  
+- Price updates dynamically with quantity
 
-    - When an authenticated user clicks on the remove button, cart item should be removed from the cart list
+---
 
-  - Feature 5
+## 📸 Screenshots
 
-    - When an authenticated user clicks on the **Remove All** button, all the cart items should be removed from the cart and [Empty Cart View](https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-empty-cart-view.png) should be displayed
+![Login Page](./screenshots/login.png)
+![Home Page](./screenshots/Home.png)
+![Products Page](./screenshots/products.png)
+![ProductDetails Page](./screenshots/product_details.png)
+![Cart Page](./screenshots/cart.png)
 
-- The `CartContext` has an object as a value with the following properties
-  - `cartList` - this key stores the cart items
-  - `removeAllCartItems` - this method is used to remove all the cart items in the `cartList`
-  - `addCartItem` - this method adds the cart item to the `cartList`
-  - `removeCartItem` - this method removes the cart item from the `cartList`
-  - `incrementCartItemQuantity` - this method increases the quantity of a product in the `cartList`
-  - `decrementCartItemQuantity` - this method decreases the quantity of a product in the `cartList`
+---
 
-</details>
+## 🧰 Tech Stack
 
-<details>
-<summary>Components Structure</summary>
+- **React**
+- **React Router**
+- **Context API**
+- **JavaScript (ES6+)**
+- **CSS / Custom styling**
+- **pnpm / npm**
+- ESLint & Prettier setup
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/nxt-trendz-cart-features-component-structure-breakdown.png" alt="component structure breakdown" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+---
 
-</details>
+## 📦 Folder Structure (Optional)
 
-<details>
-<summary>Implementation Files</summary>
-<br/>
+```
+src/
+  components/
+  context/
+     CartContext.js
+  pages/
+     Login/
+     Home/
+     Products/
+     ProductDetails/
+     Cart/
+  App.js
+  index.js
+```
 
-Use these files to complete the implementation:
+---
 
-- `src/App.js`
-- `src/components/Cart/index.js`
-- `src/components/Cart/index.css`
-- `src/components/CartItem/index.js`
-- `src/components/CartItem/index.css`
-- `src/components/CartSummary/index.js`
-- `src/components/CartSummary/index.css`
-</details>
+## 🚀 Getting Started
 
-### Quick Tips
+```bash
+# Install dependencies
+pnpm install
+# or
+npm install
 
-<details>
-<summary>Click to view</summary>
-<br>
+# Start development server
+pnpm start
+# or
+npm start
+```
 
-- The `line-height` CSS property sets the height of a line box. It's commonly used to set the distance between lines of text
+App runs at **http://localhost:3000**.
 
-  ```
-  line-height: 1.5;
-  ```
+---
 
-    <br/>
-    <img src="https://assets.ccbp.in/frontend/react-js/line-height-img.png" alt="line height" style="width:90%; max-width: 600px;"/>
+## 🔑 Demo Login Credentials
 
-- The array method `find()` returns the first item's value that satisfies the provided testing function. If no item is found, it returns `undefined`
+These were provided in the assignment:
 
-  **Syntax**: `arr.find(Testing Function)`
+### Prime User  
+- **username:** rahul  
+- **password:** rahul@2021  
 
-</details>
+### Non-Prime User  
+- **username:** raja  
+- **password:** raja@2021  
 
-### Important Note
+---
 
-<details>
-<summary>Click to view</summary>
+## 🧩 My Contribution
 
-<br/>
+Although this project was built in parts, **I personally implemented the entire Cart Module**, which includes:
 
-**The following instructions are required for the tests to pass**
+- Add / remove / update quantity  
+- Context API for global cart state  
+- Cart summary calculations  
+- Protected route  
+- Empty cart & remove-all logic  
+- UI behavior & state flow for all cart operations  
 
-- `BsPlusSquare`, `BsDashSquare` icons from `react-icons` should be used for **plus** and **minus** buttons in cart item
-- The Cart Item should consist of two HTML button elements with data-testid attribute values as **plus** and **minus** respectively
-- `AiFillCloseCircle` icon from react-icons should be used for **remove** button in cartItem
-- The Cart Item should consist of an HTML button element with data-testid attribute values as **remove**
-- The product image in **Cart Item** Route should have the alt as `title` of the product
+This module reflects my understanding of React state management, context, routing, and real-world e-commerce logic.
 
-- Prime User credentials
+---
 
-  ```text
-   username: rahul
-   password: rahul@2021
-  ```
+## 🧠 What I Learned
 
-- Non-Prime User credentials
+- How real e-commerce cart behavior works
+- Managing shared state using **Context API**
+- Building protected routes in React Router
+- Filtering, sorting, and searching using dynamic API parameters
+- Structuring components for maintainability
+- Implementing derived values like total cart amount
+- Handling edge cases in cart flow (duplicate items, empty cart, etc.)
 
-  ```text
-   username: raja
-   password: raja@2021
-  ```
+---
+## 🔧 Upcoming Improvements
 
-</details>
+The next major feature I plan to add is:
 
-### Resources
+- 💳 Payment integration (Razorpay / Stripe)
+  - Payment button on Checkout page
+  - Order creation
+  - Payment success/failure UI
 
-<details>
-<summary>Colors</summary>
+(This feature will be added once my schedule allows.)
 
-<br/>
+## 📝 Notes
 
-<div style="background-color: #0b69ff; width: 150px; padding: 10px; color: white">Hex: #0b69ff</div>
-<div style="background-color: #171f46; width: 150px; padding: 10px; color: white">Hex: #171f46</div>
-<div style="background-color: #616e7c; width: 150px; padding: 10px; color: white">Hex: #616e7c</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: black">Hex: #ffffff</div>
+This project was completed as part of a guided assignment. The login credentials and product APIs were strictly given, but all cart functionalities were implemented by me.
 
-</details>
-
-<details>
-<summary>Font-families</summary>
-
-- Roboto
-
-</details>
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
